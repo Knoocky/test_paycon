@@ -48,11 +48,11 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View className='buttons' style={styles.buttonsContainer}>
+      <View style={styles.buttonsContainer}>
         <Button title='Загрузить из API' onPress={() => handleButton('api')}/>
         <Button title='Загрузить из файла' onPress={() => handleButton('csv')} />
       </View>
-      <ScrollView className='list' showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
+      <ScrollView showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
         {dataList.map(item => {
           return (
             <View key={item.id} style={styles.listItemView}>
@@ -61,7 +61,7 @@ export default function App() {
             </View>
         )})}
       </ScrollView>
-      <Modal className='modal' visible={isLoading}>
+      <Modal visible={isLoading}>
         <View style={styles.container}>
           <View style={styles.modalView}>
             <ActivityIndicator size="large"/>
